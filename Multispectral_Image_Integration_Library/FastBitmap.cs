@@ -5,6 +5,9 @@ using System.Runtime.InteropServices;
 
 namespace Multispectral_Image_Integration_Library
 {
+    /// <summary>
+    /// Класс описывающий изображение.
+    /// </summary>
     public class FastBitmap
     {
         private Bitmap bitmap;
@@ -15,9 +18,19 @@ namespace Multispectral_Image_Integration_Library
         private int heightInPixels;
         private int widthInBytes;
 
+        /// <summary>
+        /// Свойство для объекта Bitmap изображения.
+        /// </summary>
         public Bitmap Bitmap { get => GetBitmap(bitmap); private set => bitmap = SetBitmap(value); }
+        /// <summary>
+        /// Массив значений интенсивностей пикселей.
+        /// </summary>
         public byte[,,] Data { get; set; }
 
+        /// <summary>
+        /// Основной конструктор класса.
+        /// </summary>
+        /// <param name="bitmap">Базовый объект Bitmap</param>
         public FastBitmap(Bitmap bitmap)
         {
             Data = new byte[bitmap.Width, bitmap.Height, 3];
@@ -87,7 +100,29 @@ namespace Multispectral_Image_Integration_Library
             processedBitmap.UnlockBits(bitmapData);
             return processedBitmap;
         }
-
+        /// <summary>
+        /// Преобразование цветного изображения в черно-белое.
+        /// </summary>
+        public void ToGray()
+        {
+            for(var x = 0; x < bitmap.Width; x++)
+            {
+                for (int y = 0; y < bitmap.Height; y++)
+                {
+                    byte grayPixel = (byte)(0.3 * Data[x, y, 0] + 0.59 * Data[x, y, 1] + 0.11 * Data[x, y, 2]);
+                    Data[x, y, 0] = grayPixel;
+                    Data[x, y, 1] = grayPixel;
+                    Data[x, y, 2] = grayPixel;
+                }
+            }
+        }
+        /// <summary>
+        /// Быстрый доступ к пикселям изображения.
+        /// </summary>
+        /// <param name="x">Координата x изображения</param>
+        /// <param name="y">Координата y изображения</param>
+        /// <param name="color">Цвет пикселя (red - 0, blue - 1, green - 2)</param>
+        /// <returns>Интенсивность пикселя</returns>
         public byte this[int x, int y, int color]
         {
             get => Data[x, y, color];
