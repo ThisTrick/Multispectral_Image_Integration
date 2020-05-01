@@ -4,6 +4,7 @@
 
 Принцип работы основан на комплексировании мультиспектральних изображений.
 <h3>Принцип работы програми</h3>
-![result](https://github.com/ThisTrick/Multispectral_Image_Integration/raw/master/Result.png) (укр.)
+![result](https://github.com/ThisTrick/Multispectral_Image_Integration/raw/master/Result.png)
+(укр.)
 
 Статья по иследованию: https://ela.kpi.ua/handle/123456789/31732
