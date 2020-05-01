@@ -2,10 +2,7 @@
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using Emgu.CV;
-using Emgu.CV.Cuda;
-using Emgu.CV.CvEnum;
-using Emgu.CV.Structure;
+
 
 namespace Multispectral_Image_Integration_WinForms
 {

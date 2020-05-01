@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.29209.62
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multispectral_Image_Integration_WinForms", "Multispectral_Image_Integration_WinForms\Multispectral_Image_Integration_WinForms.csproj", "{221F6E58-85AF-49D0-83F8-ECE481C10874}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multispectral_Image_Integration_Library", "Multispectral_Image_Integration_Library\Multispectral_Image_Integration_Library.csproj", "{D4DEF40C-B5F1-4A8D-ADC7-7AA9CF6AC9E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsAppForTest", "WindowsFormsAppForTest\WindowsFormsAppForTest.csproj", "{12D9569B-EF66-4A5C-9E12-F7A0AF44B1DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{221F6E58-85AF-49D0-83F8-ECE481C10874}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{221F6E58-85AF-49D0-83F8-ECE481C10874}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{221F6E58-85AF-49D0-83F8-ECE481C10874}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4DEF40C-B5F1-4A8D-ADC7-7AA9CF6AC9E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4DEF40C-B5F1-4A8D-ADC7-7AA9CF6AC9E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4DEF40C-B5F1-4A8D-ADC7-7AA9CF6AC9E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4DEF40C-B5F1-4A8D-ADC7-7AA9CF6AC9E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12D9569B-EF66-4A5C-9E12-F7A0AF44B1DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12D9569B-EF66-4A5C-9E12-F7A0AF44B1DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12D9569B-EF66-4A5C-9E12-F7A0AF44B1DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12D9569B-EF66-4A5C-9E12-F7A0AF44B1DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
