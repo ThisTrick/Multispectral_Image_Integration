@@ -49,6 +49,7 @@
     <Compile Include="InterlacingMaximumMethodFusion.cs" />
     <Compile Include="InterlacingMethodFusion.cs" />
     <Compile Include="MaximumMethodFusion.cs" />
+    <Compile Include="PixelByPixelFusion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
