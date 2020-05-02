@@ -56,6 +56,7 @@ namespace Multispectral_Image_Integration_Library
             this.IsGray = isGray;
             this.DimensionsColor = 3;
         }
+        public FastBitmap() { }
         /// <summary>
         /// Быстрое преобразование Bitmap в byte[,,]
         /// </summary>
@@ -144,8 +145,8 @@ namespace Multispectral_Image_Integration_Library
         public FastBitmap Clone()
         {
             /// Реализация какая-то кривая нужно попытаться переделать 
-            var newFastBitmap = new FastBitmap(this.bitmap, this.IsGray);
-            newFastBitmap.Data = this.Data;
+            var newFastBitmap = new FastBitmap((Bitmap)bitmap.Clone(), this.IsGray);
+            newFastBitmap.Data = Data.Clone() as byte[,,];
             return newFastBitmap;
         }
         /// <summary>

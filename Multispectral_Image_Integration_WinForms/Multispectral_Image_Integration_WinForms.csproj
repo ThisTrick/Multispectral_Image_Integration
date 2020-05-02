@@ -116,5 +116,11 @@
     <None Include="Resources\Test_2_HandWork.jpg" />
     <None Include="Resources\Test_1_HandWork.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Multispectral_Image_Integration_Library\Multispectral_Image_Integration_Library.csproj">
+      <Project>{d4def40c-b5f1-4a8d-adc7-7aa9cf6ac9e4}</Project>
+      <Name>Multispectral_Image_Integration_Library</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
