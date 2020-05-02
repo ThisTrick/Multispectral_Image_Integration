@@ -15,8 +15,8 @@ namespace Multispectral_Image_Integration_Library
         /// <returns></returns>
         public FastBitmap Segmentation(FastBitmap img, byte threshold, byte maxValue)
         {
-            var imgResult = new FastBitmap(img.Bitmap);
-            if (!img.IsGray)
+            var imgResult = img.Clone();
+            if (!imgResult.IsGray)
             {
                 imgResult.ToGray();
             }
