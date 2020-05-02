@@ -39,7 +39,7 @@
             this.load.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.load.Location = new System.Drawing.Point(0, 495);
             this.load.Name = "load";
-            this.load.Size = new System.Drawing.Size(532, 58);
+            this.load.Size = new System.Drawing.Size(576, 58);
             this.load.TabIndex = 0;
             this.load.Text = "load";
             this.load.UseVisualStyleBackColor = true;
@@ -50,7 +50,7 @@
             this.clickMe.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.clickMe.Location = new System.Drawing.Point(0, 438);
             this.clickMe.Name = "clickMe";
-            this.clickMe.Size = new System.Drawing.Size(532, 57);
+            this.clickMe.Size = new System.Drawing.Size(576, 57);
             this.clickMe.TabIndex = 1;
             this.clickMe.Text = "clickMe";
             this.clickMe.UseVisualStyleBackColor = true;
@@ -61,7 +61,7 @@
             this.pictureBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.pictureBox.Location = new System.Drawing.Point(0, 0);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(532, 404);
+            this.pictureBox.Size = new System.Drawing.Size(576, 404);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox.TabIndex = 2;
             this.pictureBox.TabStop = false;
@@ -70,7 +70,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(532, 553);
+            this.ClientSize = new System.Drawing.Size(576, 553);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.clickMe);
             this.Controls.Add(this.load);

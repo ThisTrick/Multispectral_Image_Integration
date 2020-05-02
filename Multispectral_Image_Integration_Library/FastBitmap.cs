@@ -26,15 +26,29 @@ namespace Multispectral_Image_Integration_Library
         /// Массив значений интенсивностей пикселей.
         /// </summary>
         public byte[,,] Data { get; set; }
-
+        /// <summary>
+        /// Ширина изображения.
+        /// </summary>
+        public int Width { get; private set; }
+        /// <summary>
+        /// Высота изображения.
+        /// </summary>
+        public int Height { get; private set; }
+        /// <summary>
+        /// Флаг говорящей о цветовой гамме изображения.
+        /// true - черно-белое, false - цветное.
+        /// </summary>
+        public bool IsGray { get; private set; }
         /// <summary>
         /// Основной конструктор класса.
         /// </summary>
         /// <param name="bitmap">Базовый объект Bitmap</param>
         public FastBitmap(Bitmap bitmap)
         {
-            Data = new byte[bitmap.Width, bitmap.Height, 3];
+            this.Data = new byte[bitmap.Width, bitmap.Height, 3];
             this.Bitmap = bitmap;
+            this.Width = bitmap.Width;
+            this.Height = bitmap.Height;
         }
         /// <summary>
         /// Быстрое преобразование Bitmap в byte[,,]
