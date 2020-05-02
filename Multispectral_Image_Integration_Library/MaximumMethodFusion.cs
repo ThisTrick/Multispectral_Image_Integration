@@ -9,7 +9,7 @@ namespace Multispectral_Image_Integration_Library
     {
         public FastBitmap Fusion(FastBitmap img1, FastBitmap img2)
         {
-            if (img1.Width != img2.Width && img2.Height != img2.Height)
+            if (img1.Width != img2.Width || img2.Height != img2.Height)
             {
                 throw new ArgumentException("Изображения должны быть одного размера");
             }

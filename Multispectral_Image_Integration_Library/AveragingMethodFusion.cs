@@ -9,7 +9,7 @@ namespace Multispectral_Image_Integration_Library
     {
         public FastBitmap Fusion(FastBitmap img1, FastBitmap img2)
         {
-            if (img1.Width != img2.Width && img2.Height != img2.Height)
+            if (img1.Width != img2.Width || img2.Height != img2.Height)
             {
                 throw new ArgumentException("Изображения должны быть одного размера");
             }
@@ -20,7 +20,7 @@ namespace Multispectral_Image_Integration_Library
                 {
                     for (int color = 0; color < imgResult.DimensionsColor; color++)
                     {
-                        imgResult[x, y, color] = img2[x, y, color];
+                        imgResult[x, y, color] = (byte)((img1[x, y, color] + img2[x, y, color]) / 2);
                     }
                 }
             }
