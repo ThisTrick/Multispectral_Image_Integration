@@ -25,8 +25,9 @@ namespace WindowsFormsAppForTest
                 return;
             }
             FastBitmap image = new FastBitmap(Bitmap);
-            image.ToGray();
-            pictureBox.Image = image.Bitmap;
+            BinarySegmentator binarySegmentator = new BinarySegmentator();
+            var imgResult = binarySegmentator.Segmentation(image, 150, 255);
+            pictureBox.Image = imgResult.Bitmap;
 
         }
 

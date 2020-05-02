@@ -15,7 +15,22 @@ namespace Multispectral_Image_Integration_Library
         /// <returns></returns>
         public FastBitmap Segmentation(FastBitmap img, byte threshold, byte maxValue)
         {
-
+            var imgResult = new FastBitmap(img.Bitmap);
+            if (!img.IsGray)
+            {
+                imgResult.ToGray();
+            }
+            for (int x = 0; x < imgResult.Width; x++)
+            {
+                for (int y = 0; y < imgResult.Height; y++)
+                {
+                    byte pixelValue = imgResult[x, y, 0] > threshold ? (byte)0 : maxValue;
+                    imgResult[x, y, 0] = pixelValue;
+                    imgResult[x, y, 1] = pixelValue;
+                    imgResult[x, y, 2] = pixelValue;
+                }
+            }
+            return imgResult;
         }
     }
 }

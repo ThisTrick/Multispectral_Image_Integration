@@ -8,7 +8,7 @@ namespace Multispectral_Image_Integration_Library
     /// <summary>
     /// Класс описывающий изображение.
     /// </summary>
-    public class FastBitmap
+    public class FastBitmap : ICloneable
     {
         private Bitmap bitmap;
         private int bytesPerPixel;
@@ -43,12 +43,13 @@ namespace Multispectral_Image_Integration_Library
         /// Основной конструктор класса.
         /// </summary>
         /// <param name="bitmap">Базовый объект Bitmap</param>
-        public FastBitmap(Bitmap bitmap)
+        public FastBitmap(Bitmap bitmap, bool isGray = false)
         {
             this.Data = new byte[bitmap.Width, bitmap.Height, 3];
             this.Bitmap = bitmap;
             this.Width = bitmap.Width;
             this.Height = bitmap.Height;
+            this.IsGray = isGray;
         }
         /// <summary>
         /// Быстрое преобразование Bitmap в byte[,,]
@@ -129,7 +130,31 @@ namespace Multispectral_Image_Integration_Library
                     Data[x, y, 2] = grayPixel;
                 }
             }
+            this.IsGray = true;
         }
+        /// <summary>
+        /// Создает копию объекта с типом FastBitmap 
+        /// </summary>
+        /// <returns></returns>
+        public FastBitmap Clone()
+        {
+            /// Реализация какая-то кривая нужно попытаться переделать 
+            var newFastBitmap = new FastBitmap(this.bitmap, this.IsGray);
+            newFastBitmap.Data = this.Data;
+            return newFastBitmap;
+        }
+        /// <summary>
+        /// Создает копию объекта с типом Object
+        /// </summary>
+        /// <returns></returns>
+        object ICloneable.Clone()
+        {
+            return this.Clone();
+        }
+
+
+
+
         /// <summary>
         /// Быстрый доступ к пикселям изображения.
         /// </summary>
