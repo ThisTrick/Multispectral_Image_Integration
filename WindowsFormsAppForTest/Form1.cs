@@ -30,7 +30,7 @@ namespace WindowsFormsAppForTest
             }
             FastBitmap img1 = new FastBitmap(Bitmap1);
             FastBitmap img2 = new FastBitmap(Bitmap2);
-            IImageFusion fusion = new MaximumMethodFusion();
+            IImageFusion fusion = new AveragingMethodFusion();
             var imgResult = fusion.Fusion(img1, img2);
             pictureBox.Image = imgResult.Bitmap;
 
