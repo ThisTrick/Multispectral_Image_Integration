@@ -46,6 +46,7 @@
     <Compile Include="BinarySegmentator.cs" />
     <Compile Include="FastBitmap.cs" />
     <Compile Include="IImageFusion.cs" />
+    <Compile Include="InterlacingMethodFusion.cs" />
     <Compile Include="MaximumMethodFusion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

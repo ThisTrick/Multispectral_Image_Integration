@@ -3,9 +3,9 @@
 namespace Multispectral_Image_Integration_Library
 {
     /// <summary>
-    /// Метод слияния двух изображений основанный на усреднении интенсивности пикселей первого изображения с соответствующими пикселями второго изображения.
+    /// Метод слияния двух изображений основанный на поочередном выборе строчек пикселей из входных изображений.
     /// </summary>
-    public class AveragingMethodFusion : IImageFusion
+    public class InterlacingMethodFusion : IImageFusion
     {
         public FastBitmap Fusion(FastBitmap img1, FastBitmap img2)
         {
@@ -16,11 +16,11 @@ namespace Multispectral_Image_Integration_Library
             var imgResult = img1.Clone();
             for (int x = 0; x < imgResult.Width; x++)
             {
-                for (int y = 0; y < imgResult.Height; y += 2)
+                for (int y = 0; y < imgResult.Height; y++)
                 {
                     for (int color = 0; color < imgResult.DimensionsColor; color++)
                     {
-                        imgResult[x, y, color] = img2[x, y, color];
+                        imgResult[x, y, color] = (byte)((img1[x, y, color] + img2[x, y, color]) / 2);
                     }
                 }
             }
