@@ -24,9 +24,10 @@
                 for (int y = 0; y < imgResult.Height; y++)
                 {
                     byte pixelValue = imgResult[x, y, 0] > threshold ? (byte)0 : maxValue;
-                    imgResult[x, y, 0] = pixelValue;
-                    imgResult[x, y, 1] = pixelValue;
-                    imgResult[x, y, 2] = pixelValue;
+                    for (int color = 0; color < imgResult.DimensionsColor; color++)
+                    {
+                        imgResult[x, y, color] = pixelValue;
+                    }
                 }
             }
             return imgResult;

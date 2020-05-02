@@ -7,7 +7,8 @@ namespace WindowsFormsAppForTest
 {
     public partial class Form1 : Form
     {
-        private Bitmap Bitmap;
+        private Bitmap Bitmap1;
+        private Bitmap Bitmap2;
         public Form1()
         {
             InitializeComponent();
@@ -15,18 +16,22 @@ namespace WindowsFormsAppForTest
 
         private void load_Click(object sender, EventArgs e)
         {
-            Bitmap = ImageLoad(pictureBox);
+            Bitmap1 = ImageLoad(pictureBox);
         }
-
+        private void load2_Click(object sender, EventArgs e)
+        {
+            Bitmap2 = ImageLoad(pictureBox);
+        }
         private void clickMe_Click(object sender, EventArgs e)
         {
-            if (Bitmap == null)
+            if (Bitmap1 == null && Bitmap2 == null)
             {
                 return;
             }
-            FastBitmap image = new FastBitmap(Bitmap);
-            BinarySegmentator binarySegmentator = new BinarySegmentator();
-            var imgResult = binarySegmentator.Segmentation(image, 150, 255);
+            FastBitmap img1 = new FastBitmap(Bitmap1);
+            FastBitmap img2 = new FastBitmap(Bitmap2);
+            IImageFusion fusion = new AveragingMethodFusion();
+            var imgResult = fusion.Fusion(img1, img2);
             pictureBox.Image = imgResult.Bitmap;
 
         }
@@ -69,5 +74,7 @@ namespace WindowsFormsAppForTest
             }
             return null;
         }
+
+
     }
 }

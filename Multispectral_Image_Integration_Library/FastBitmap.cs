@@ -35,6 +35,10 @@ namespace Multispectral_Image_Integration_Library
         /// </summary>
         public int Height { get; private set; }
         /// <summary>
+        /// Количество цветовых измерений
+        /// </summary>
+        public int DimensionsColor { get; private set; }
+        /// <summary>
         /// Флаг говорящей о цветовой гамме изображения.
         /// true - черно-белое, false - цветное.
         /// </summary>
@@ -50,6 +54,7 @@ namespace Multispectral_Image_Integration_Library
             this.Width = bitmap.Width;
             this.Height = bitmap.Height;
             this.IsGray = isGray;
+            this.DimensionsColor = 3;
         }
         /// <summary>
         /// Быстрое преобразование Bitmap в byte[,,]
@@ -151,10 +156,6 @@ namespace Multispectral_Image_Integration_Library
         {
             return this.Clone();
         }
-
-
-
-
         /// <summary>
         /// Быстрый доступ к пикселям изображения.
         /// </summary>

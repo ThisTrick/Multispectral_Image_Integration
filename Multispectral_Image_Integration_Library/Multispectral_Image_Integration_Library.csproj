@@ -42,8 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AveragingMethodFusion.cs" />
     <Compile Include="BinarySegmentator.cs" />
     <Compile Include="FastBitmap.cs" />
+    <Compile Include="IImageFusion.cs" />
+    <Compile Include="MaximumMethodFusion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

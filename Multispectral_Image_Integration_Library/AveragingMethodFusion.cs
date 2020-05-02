@@ -2,10 +2,7 @@
 
 namespace Multispectral_Image_Integration_Library
 {
-    /// <summary>
-    /// Метод слияния двух изображений основанный на выборе пикселей максимальной интенсивности
-    /// </summary>
-    public class MaximumMethodFusion : IImageFusion
+    public class AveragingMethodFusion : IImageFusion
     {
         public FastBitmap Fusion(FastBitmap img1, FastBitmap img2)
         {
@@ -20,7 +17,7 @@ namespace Multispectral_Image_Integration_Library
                 {
                     for (int color = 0; color < imgResult.DimensionsColor; color++)
                     {
-                        imgResult[x, y, color] = img1[x, y, color] > img2[x, y, color] ? img1[x, y, color] : img2[x, y, color];
+                        imgResult[x, y, color] = (byte)((img1[x, y, color] + img2[x, y, color]) / 2);
                     }
                 }
             }
