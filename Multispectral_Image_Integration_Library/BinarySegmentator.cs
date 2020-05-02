@@ -1,5 +1,4 @@
-﻿
-namespace Multispectral_Image_Integration_Library
+﻿namespace Multispectral_Image_Integration_Library
 {
     /// <summary>
     /// Класс с реализацией бинарной пороговой сегментации. 
@@ -12,7 +11,7 @@ namespace Multispectral_Image_Integration_Library
         /// <param name="img">Объект изображения типа FastBitmap</param>
         /// <param name="threshold">Значение порога</param>
         /// <param name="maxValue">Максимальная интенсивность изображения после сегментации</param>
-        /// <returns></returns>
+        /// <returns>Результат бинарной сегментации</returns>
         public FastBitmap Segmentation(FastBitmap img, byte threshold, byte maxValue)
         {
             var imgResult = img.Clone();
